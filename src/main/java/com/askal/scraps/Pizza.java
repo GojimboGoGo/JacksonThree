@@ -1,12 +1,11 @@
 package com.askal.scraps;
 
-import com.askal.scraps.access.PizzaAccess;
-
-public class Pizza implements PizzaAccess {
+public class Pizza {
 
     private String toppings;
     private boolean hasThinCrust;
     private String sauce;
+    private String secretIngredient;
 
     public String getToppings() {
         return toppings;
@@ -30,5 +29,13 @@ public class Pizza implements PizzaAccess {
 
     public void setSauce(String sauce) {
         this.sauce = sauce;
+    }
+
+    public String getSecretIngredient() {
+        return secretIngredient;
+    }
+
+    public void setSecretIngredient(String secretIngredient) {
+        this.secretIngredient = secretIngredient;
     }
 }

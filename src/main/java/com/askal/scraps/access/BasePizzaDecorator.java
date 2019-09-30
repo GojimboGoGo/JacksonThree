@@ -2,27 +2,28 @@ package com.askal.scraps.access;
 
 import com.askal.scraps.Pizza;
 
-public abstract class BasePizzaDecorator implements PizzaAccess {
-
-    protected PizzaAccess pizza;
+public abstract class BasePizzaDecorator extends Pizza {
 
     protected BasePizzaDecorator() {
         this(new Pizza());
     }
 
-    protected BasePizzaDecorator(PizzaAccess pizza) {
-        this.pizza = pizza;
+    public BasePizzaDecorator(Pizza pizza) {
+        this.setHasThinCrust(pizza.isHasThinCrust());
+        this.setSauce(pizza.getSauce());
+        this.setToppings(pizza.getToppings());
+        this.setSecretIngredient(pizza.getSecretIngredient());
     }
 
     public String getToppings() {
-        return pizza.getToppings();
+        return super.getToppings();
     }
 
     public boolean isHasThinCrust() {
-        return pizza.isHasThinCrust();
+        return super.isHasThinCrust();
     }
 
     public String getSauce() {
-        return pizza.getSauce();
+        return super.getSauce();
     }
 }
